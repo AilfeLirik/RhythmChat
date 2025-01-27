@@ -1,0 +1,166 @@
+.notifications {
+    z-index: 100;
+    position: fixed;
+    top: 110px;
+    right: 20px;
+}
+
+.notifications .toast {
+    display: flex;
+    align-items: center;
+    width: 245px;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 16px 17px;
+    margin-bottom: 10px;
+    justify-content: center;
+    border: 3px solid #8A2FFF;
+    background: linear-gradient(0deg, #0D0D14, #0D0D14), #D9D9D9;
+    box-shadow: 5px 2px 19px #603ff9;
+    border-radius: 10px;
+    animation: show_toast 0.3s ease forwards;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.content img {
+    width: 32px;
+    margin-right: 20px;
+}
+
+.content span {
+    display: inline-block;
+    font-family: Jost-Medium, sans-serif;
+    font-size: 16px;
+    color: #7c21ff;
+}
+
+.content b {
+    color: deepskyblue;
+}
+
+@keyframes show_toast {
+    0% {
+        transform: translateX(100%);
+    }
+    40% {
+        transform: translateX(-5%);
+    }
+    80% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-10px);
+    }
+}
+
+.notifications .toast.hide {
+    animation: hide_toast 0.3s ease forwards;
+}
+
+@keyframes hide_toast {
+    0% {
+        transform: translateX(-10px);
+    }
+    40% {
+        transform: translateX(0%);
+    }
+    80% {
+        transform: translateX(-5%);
+    }
+    100% {
+        transform: translateX(calc(100% + 20px));
+    }
+}
+
+.toast::before { /*Créer un élément purement visuel*/
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    animation: progress 5s linear forwards;
+}
+
+/*change the color of the progress bar depending on the type of notification*/
+
+.info::before {
+    background: #54A3FF; /* Bleu pour info */
+}
+
+.success::before {
+    background: #137C2C; /* Vert pour succès */
+}
+
+.error::before {
+    background: #FF0C29; /* Rouge pour erreur */
+}
+
+.warning::before {
+    background: #EDAA0F; /* Orange pour avertissement */
+}
+
+@keyframes progress { /*progressivement le faire disparaitre en réduisant sa width*/
+    100% {
+        width: 0;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .notifications {
+        width: 95%;
+    }
+
+    .notifications .toast {
+        width: 100%;
+        font-size: 1rem;
+        margin-left: 20px;
+    }
+}
+
+.xp_notifications {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+}
+
+.xp_notifications .xp_toast {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 16px 17px;
+    margin-bottom: 2px;
+    justify-content: center;
+    border: none;
+    animation: show_toast 0.3s ease forwards;
+}
+
+.xp_notifications .xp_toast.hide_xp {
+    animation: hide_xp_toast 0.3s ease forwards;
+}
+
+@keyframes hide_xp_toast {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(10%);
+    }
+    100% {
+        transform: translateX(calc(-100vw - 20px));
+    }
+}

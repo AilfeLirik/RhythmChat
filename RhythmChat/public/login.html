@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width"
+          name="viewport">
+    <title>Rhythm Chat</title>
+    <link href="images/icon.png" id="favicon" rel="icon" type="image/x-icon">
+
+    <!-- Importation des styles css-->
+    <link href="style/login.css" rel="stylesheet">
+    <link href="style/notifications.css" rel="stylesheet">
+
+    <!-- Importation des scripts js-->
+    <script src="client/pageLoadHandler.js"></script>
+    <script src="client/utils.js"></script>
+    <script src="client/soundHandler.js"></script>
+    <script src="client/notificationsHandler.js"></script>
+    <script src="client/settingsHandler.js"></script>
+    <script src="client/xpHandler.js"></script>
+    <script src="client/authorizationsHandler.js"></script>
+    <script src="client/client.js"></script>
+</head>
+<body>
+<!-- Notifications -->
+<ul class="notifications"></ul>
+<!-- Formulaire de connexion -->
+<form id="login_form">
+    <img alt="Chat" loading="lazy" src="images/icon.png">
+
+    <h1 id="colorful_title">R<span class="fast-flicker">h</span>ythm Ch<span class="flicker">a</span>t</h1>
+    <div class="entries">
+        <h2>Utilisateur</h2>
+        <div class="border">
+            <!-- Entrée du nom d'utilisateur -->
+            <input class="login_input" id="username" placeholder="Jean-Kévin" type="text">
+        </div>
+        <h2>Mot de passe</h2>
+        <div class="border">
+            <!-- Entrée du mot de passe -->
+            <input class="login_input" id="password" placeholder="12345678" type="password">
+        </div>
+    </div>
+
+    <!-- Bouton de connexion -->
+    <button class="login_button" type="submit">
+        <p>Se connecter</p>
+    </button>
+</form>
+</body>

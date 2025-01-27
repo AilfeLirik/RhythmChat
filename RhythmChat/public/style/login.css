@@ -1,0 +1,281 @@
+* {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    transition: all .1s ease;
+    color: #ffffff;
+    scrollbar-color: #8A2FFF #3A3A3A;
+    scrollbar-width: thin;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(31.36deg, #121228 22.08%, #1E192F 55.7%, #2F1F4B 79.65%);
+}
+
+#login_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 400px;
+    height: 500px;
+    border: 3px solid #8A2FFF;
+    background: linear-gradient(0deg, #0D0D14, #0D0D14), #D9D9D9;
+    box-shadow: 5px 2px 19px #603ff9;
+    border-radius: 16px;
+}
+
+#login_form img {
+    width: 200px;
+}
+
+.entries {
+    width: 82%;
+}
+
+input {
+    width: 100%;
+}
+
+.login_input {
+    background-color: #3A3A3A;
+    border-image-source: linear-gradient(159.93deg, #2854EF -34.54%, #8A2FFF 124.47%);
+    border-image-slice: 1;
+    border-radius: 8px;
+    padding: 6px 6px 6px 12px;
+    z-index: 1;
+    font-family: Jost-Medium, sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    caret-color: #8A2FFF;
+    outline: none;
+    appearance: none;
+}
+
+#colorful_title {
+    animation: shine 2s forwards, flicker 3s infinite;
+    font-family: Jost-Bold, sans-serif;
+    font-size: 32px;
+    padding-left: 12px;
+    padding-bottom: 16px;
+}
+
+@keyframes blink {
+    0%,
+    22%,
+    36%,
+    75% {
+        color: #ffe6ff;
+        text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+        -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+    }
+    28%,
+    33% {
+        color: #ff65bd;
+        text-shadow: none;
+    }
+    82%,
+    97% {
+        color: #ff2483;
+        text-shadow: none;
+    }
+}
+
+.flicker {
+    animation: shine 2s forwards, blink 3s 2s infinite;
+}
+
+.fast-flicker {
+    animation: shine 2s forwards, blink 10s 1s infinite;
+}
+
+@keyframes shine {
+    0% {
+        color: #6b1839;
+        text-shadow: none;
+    }
+    100% {
+        color: #ffe6ff;
+        text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+        -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+    }
+}
+
+@keyframes flicker {
+    from {
+        opacity: 1;
+    }
+
+    4% {
+        opacity: 0.9;
+    }
+
+    6% {
+        opacity: 0.85;
+    }
+
+    8% {
+        opacity: 0.95;
+    }
+
+    10% {
+        opacity: 0.9;
+    }
+
+    11% {
+        opacity: 0.922;
+    }
+
+    12% {
+        opacity: 0.9;
+    }
+
+    14% {
+        opacity: 0.95;
+    }
+
+    16% {
+        opacity: 0.98;
+    }
+
+    17% {
+        opacity: 0.9;
+    }
+
+    19% {
+        opacity: 0.93;
+    }
+
+    20% {
+        opacity: 0.99;
+    }
+
+    24% {
+        opacity: 1;
+    }
+
+    26% {
+        opacity: 0.94;
+    }
+
+    28% {
+        opacity: 0.98;
+    }
+
+    37% {
+        opacity: 0.93;
+    }
+
+    38% {
+        opacity: 0.5;
+    }
+
+    39% {
+        opacity: 0.96;
+    }
+
+    42% {
+        opacity: 1;
+    }
+
+    44% {
+        opacity: 0.97;
+    }
+
+    46% {
+        opacity: 0.94;
+    }
+
+    56% {
+        opacity: 0.9;
+    }
+
+    58% {
+        opacity: 0.9;
+    }
+
+    60% {
+        opacity: 0.99;
+    }
+
+    68% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.9;
+    }
+
+    72% {
+        opacity: 0.95;
+    }
+
+    93% {
+        opacity: 0.93;
+    }
+
+    95% {
+        opacity: 0.95;
+    }
+
+    97% {
+        opacity: 0.93;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.color1 {
+    color: #f03d8f;
+}
+
+.color2 {
+    color: #7c21ff;
+}
+
+#login_form h2 {
+    margin-top: 12px;
+    padding-left: 12px;
+    font-family: Jost-Light, sans-serif;
+    font-size: 16px;
+}
+
+.login_button {
+    width: fit-content;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 8px 21px;
+    border-radius: 3px;
+    border: none;
+    background: linear-gradient(159.93deg, #2854EF -34.54%, #8A2FFF 124.47%), #262626;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 4px #00000040;
+}
+
+.login_button p {
+    font-family: Montserrat-Medium, sans-serif;
+    font-size: 18px;
+}
+
+.border {
+    background: linear-gradient(159.93deg, #2854EF -34.54%, #8A2FFF 124.47%), #262626;
+    border-radius: 8px;
+    padding: 2px;
+    margin: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

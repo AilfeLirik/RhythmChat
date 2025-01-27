@@ -1,0 +1,203 @@
+* {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    transition: all .1s ease;
+    color: #ffffff;
+    scrollbar-color: #8A2FFF #3A3A3A;
+    scrollbar-width: thin;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(31.36deg, #121228 22.08%, #1E192F 55.7%, #2F1F4B 79.65%);
+}
+
+#current_level_container {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    justify-content: center;
+    top: 75px;
+    width: 180px;
+    height: 50px;
+    border: 3px solid #8A2FFF;
+    background: linear-gradient(0deg, #0D0D14, #0D0D14), #D9D9D9;
+    box-shadow: 5px 2px 19px #603ff9;
+    border-radius: 16px;
+}
+
+#current_level_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Jost-Medium, sans-serif;
+    font-size: 16px;
+    color: #7c21ff;
+}
+
+#current_level_text b {
+    color: deepskyblue;
+}
+
+@keyframes shine {
+    0% {
+        color: #6b1839;
+        text-shadow: none;
+    }
+    10% {
+        color: #ffe6ff;
+        text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+        -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+    }
+    90% {
+        color: #ffe6ff;
+        text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+        -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+    }
+    100% {
+        color: #6b1839;
+        text-shadow: none;
+    }
+}
+
+#sound_perk_container, #customization_perk_container, #functionality_perk_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 27%;
+    margin-left: 3%;
+    margin-right: 3%;
+    height: 120vh;
+}
+
+.category_title_container {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 50px;
+    margin-top: 150px;
+    border: 3px solid #8A2FFF;
+    background: linear-gradient(0deg, #0D0D14, #0D0D14), #D9D9D9;
+    box-shadow: 5px 2px 19px #603ff9;
+    border-radius: 16px;
+}
+
+.perk_category_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Jost-Medium, sans-serif;
+    font-size: 16px;
+    color: #7c21ff;
+}
+
+.perk_trail {
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+    position: absolute;
+    width: 18px;
+    height: 95%;
+    background: linear-gradient(159.93deg, #2854EF -34.54%, #8A2FFF 124.47%), #262626;
+}
+
+.perk_container {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    width: 55%;
+    height: 105px;
+    margin-top: 60px;
+    background: linear-gradient(0deg, #0D0D14, #0D0D14), #D9D9D9;
+    border-radius: 16px;
+}
+
+.locked_perk {
+    border: 3px solid red;
+    box-shadow: 5px 2px 19px darkred;
+}
+
+.unlocked_perk {
+    border: 3px solid lime;
+    box-shadow: 5px 2px 19px green;
+}
+
+.perk_level_container {
+    display: flex;
+    padding-top: 4px;
+    padding-bottom: 3px;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-radius: 12px;
+}
+
+.locked_container {
+    background: darkred;
+}
+
+.unlocked_container {
+    background: green;
+}
+
+.perk_level {
+    display: flex;
+    font-family: Jost-Medium, sans-serif;
+    font-size: 14px;
+    color: navajowhite;
+}
+
+.perk_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+
+}
+
+.perk_icon_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-right: 10px;
+    margin-left: 3px;
+}
+
+.perk_icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    padding-bottom: 8px;
+}
+
+.perk_description_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.perk_description {
+    display: inline-block;
+    text-align: center;
+    font-family: Jost-Medium, sans-serif;
+    font-size: 14px;
+    color: #7c21ff;
+    padding-bottom: 2px;
+}

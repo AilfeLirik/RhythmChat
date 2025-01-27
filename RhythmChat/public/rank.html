@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width"
+          name="viewport">
+    <title>Rhythm Chat</title>
+    <link href="images/icon.png" id="favicon" rel="icon" type="image/x-icon">
+
+    <!-- Importation des styles css-->
+    <link href="style/rank.css" rel="stylesheet">
+    <link href="style/navbar.css" rel="stylesheet">
+    <link href="style/notifications.css" rel="stylesheet">
+
+    <!-- Importation des scripts js-->
+    <script src="client/pageLoadHandler.js"></script>
+    <script src="client/utils.js"></script>
+    <script src="client/soundHandler.js"></script>
+    <script src="client/xpHandler.js"></script>
+    <script src="client/authorizationsHandler.js"></script>
+    <script src="client/notificationsHandler.js"></script>
+    <script src="client/settingsHandler.js"></script>
+    <script src="client/client.js"></script>
+</head>
+<body>
+<!-- Notifications -->
+<ul class="notifications"></ul>
+<!-- Barre de navigation -->
+<div class="header_container">
+    <div class="header_left_part">
+        <img alt="" loading="lazy" src="images/icon.png">
+        <div class="nav">
+            <a class="other_page_link" href="chat.html">Chat</a>
+            <a class="other_page_link" href="perk.html">Palier</a>
+            <a class="current_page_link" href="rank.html">Classement</a>
+            <a class="other_page_link" href="account.html">Compte</a>
+
+        </div>
+    </div>
+    <div class="header_right_part">
+        <!-- Compteur de sessions actives-->
+        <div class="sessions_counter">
+            <img alt="Chat" src="images/online.png">
+            <p class="sessions_counter_text">0 Connectés</p>
+        </div>
+        <!-- Bouton de déconnexion -->
+        <button class="logout_button" type="button">
+            <p>Déconnexion</p>
+        </button>
+    </div>
+</div>
+
+<!-- Tableau de classement -->
+<div id="table_container">
+    <div class="table_wrapper">
+        <table id="rank_table">
+            <!-- Titres du tableau -->
+            <thead>
+            <tr>
+                <!-- Titre principal -->
+                <th colspan="67" id="table_title">CLASSEMENT DES JOUEURS</th>
+            </tr>
+            <tr id="table_main_titles">
+                <!-- Titres des colonnes -->
+                <td class="table_head">
+                    <strong>#</strong>
+                </td>
+                <td class="table_head">
+                    <strong>Status</strong>
+                </td>
+                <td class="table_head" style="width: 60%">
+                    <strong>Pseudo</strong>
+                </td>
+                <td class="table_head">
+                    <strong>Expérience</strong>
+                </td>
+            </tr>
+            </thead>
+
+            <!-- Contenu du tableau -->
+            <tbody id="rank_insert">
+            <!-- Les lignes sont insérées ici -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>

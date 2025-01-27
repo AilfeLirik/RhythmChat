@@ -1,0 +1,92 @@
+.header_container {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: auto;
+    align-items: center;
+    height: 62px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 20px 5px #00000040;
+    border-radius: 0 0 20px 20px;
+    background: linear-gradient(159.93deg, #2854EF -34.54%, #8A2FFF 124.47%), #262626;
+}
+
+.header_left_part {
+    display: flex;
+    gap: 12px;
+}
+
+.nav {
+    margin-left: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Inter-Medium, sans-serif;
+}
+
+.nav a {
+    margin-right: 28px;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    cursor: pointer;
+}
+
+.current_page_link {
+    font-family: Inter-SemiBold, sans-serif;
+    border-bottom: solid 2px #ffffff;
+}
+
+.header_container img {
+    margin-left: 18px;
+    width: 55px;
+    cursor: pointer;
+}
+
+.header_right_part {
+    display: flex;
+    right: 0;
+    margin-right: 18px;
+    gap: 12px
+}
+
+.sessions_counter {
+    border: solid #00FF21 1px;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: Jost-Medium, sans-serif;
+    cursor: pointer;
+    display: flex;
+}
+
+.sessions_counter img {
+    image-rendering: pixelated;
+    margin-right: 8px;
+    width: 24px;
+    margin-left: 8px;
+}
+
+.sessions_counter:hover {
+    background-color: #00ff2126;
+}
+
+.logout_button {
+    align-items: center;
+    background: #FD5454;
+    padding: 8px 24px;
+    border-radius: 6px;
+    font-family: Jost-Medium, sans-serif;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    box-shadow: 0 4px 4px #00000040;
+}
+
+.logout_button p {
+    font-family: Montserrat-Medium, sans-serif;
+    font-size: 18px;
+}

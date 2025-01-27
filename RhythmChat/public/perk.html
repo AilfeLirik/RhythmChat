@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width"
+          name="viewport">
+    <title>Rhythm Chat</title>
+    <link href="images/icon.png" id="favicon" rel="icon" type="image/x-icon">
+
+    <!-- Importation des styles css-->
+    <link href="style/perk.css" rel="stylesheet">
+    <link href="style/navbar.css" rel="stylesheet">
+    <link href="style/notifications.css" rel="stylesheet">
+
+    <!-- Importation des scripts js-->
+    <script src="client/pageLoadHandler.js"></script>
+    <script src="client/utils.js"></script>
+    <script src="client/soundHandler.js"></script>
+    <script src="client/notificationsHandler.js"></script>
+    <script src="client/xpHandler.js"></script>
+    <script src="client/authorizationsHandler.js"></script>
+    <script src="client/settingsHandler.js"></script>
+    <script src="client/client.js"></script>
+</head>
+<body>
+<!-- Notifications -->
+<ul class="notifications"></ul>
+<!-- Barre de Navigation -->
+<div class="header_container">
+    <div class="header_left_part">
+        <img alt="" loading="lazy" src="images/icon.png">
+        <div class="nav">
+            <a class="other_page_link" href="chat.html">Chat</a>
+            <a class="current_page_link" href="perk.html">Palier</a>
+            <a class="other_page_link" href="rank.html">Classement</a>
+            <a class="other_page_link" href="account.html">Compte</a>
+
+        </div>
+    </div>
+    <div class="header_right_part">
+        <!-- Compteur de sessions actives-->
+        <div class="sessions_counter">
+            <img alt="Chat" src="images/online.png">
+            <p class="sessions_counter_text">0 Connectés</p>
+        </div>
+        <button class="logout_button" type="button">
+            <!-- Bouton de déconnexion -->
+            <p>Déconnexion</p>
+        </button>
+    </div>
+</div>
+
+<!-- Affichage du niveau actuel de l'utilisateur -->
+<div id="current_level_container">
+    <span id="current_level_text">Vous êtes niveau <b>0</b></span>
+</div>
+
+
+<!-- Paliers des fonctionnalités -->
+<div id="functionality_perk_container">
+    <div class="category_title_container">
+        <span class="perk_category_title">Fonctionnalités</span>
+    </div>
+    <!-- Tracé qui relie les paliers -->
+    <div class="perk_trail"></div>
+
+    <!-- Paliers -->
+    <!-- Chaque palier est un container qui contient un niveau (sauvegardé en data), une icone et une description -->
+    <div class="perk_container locked_perk" data-level="1">
+
+        <div class="perk_level_container locked_container">
+            <span class="perk_level">Niveau 1</span>
+        </div>
+
+        <div class="perk_content">
+            <div class="perk_icon_container">
+                <img alt="" class="perk_icon" src="images/success.png">
+            </div>
+
+            <div class="perk_description_container">
+                <span class="perk_description">Débloquage de la sélection de texte</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="perk_container locked_perk" data-level="4">
+
+        <div class="perk_level_container locked_container">
+            <span class="perk_level">Niveau 4</span>
+        </div>
+
+        <div class="perk_content">
+            <div class="perk_icon_container">
+                <img alt="" class="perk_icon" src="images/success.png">
+            </div>
+
+            <div class="perk_description_container">
+                <span class="perk_description">Débloquage des mentions</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="perk_container locked_perk" data-level="7">
+
+        <div class="perk_level_container locked_container">
+            <span class="perk_level">Niveau 7</span>
+        </div>
+
+        <div class="perk_content">
+            <div class="perk_icon_container">
+                <img alt="" class="perk_icon" src="images/success.png">
+            </div>
+
+            <div class="perk_description_container">
+                <span class="perk_description">Débloquage de l'envoi de liens</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="perk_container locked_perk" data-level="10">
+
+        <div class="perk_level_container locked_container">
+            <span class="perk_level">Niveau 10</span>
+        </div>
+
+        <div class="perk_content">
+            <div class="perk_icon_container">
+                <img alt="" class="perk_icon" src="images/success.png">
+            </div>
+
+            <div class="perk_description_container">
+                <span class="perk_description">Débloquage de l'envoi d'images</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="perk_container locked_perk" data-level="13">
+
+        <div class="perk_level_container locked_container">
+            <span class="perk_level">Niveau 13</span>
+        </div>
+
+        <div class="perk_content">
+            <div class="perk_icon_container">
+                <img alt="" class="perk_icon" src="images/success.png">
+            </div>
+
+            <div class="perk_description_container">
+                <span class="perk_description">Débloquage du choix de la bande son</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Paliers des customisations visuelles -->
+<div id="customization_perk_container">
+    <div class="category_title_container">
+        <span class="perk_category_title">Personnalisation</span>
+    </div>
+    <!-- Tracé qui relie les paliers -->
+    <div class="perk_trail"></div>
+
+    <!-- Paliers -->
+    <!-- Chaque palier est un container qui contient un niveau (sauvegardé en data), une icone et une description -->
+    <div class="perk_container locked_perk" data-level="2">
+
+        <div class="perk_level_container locked_container">
+            <span class="perk_level">Niveau 2</span>
+        </div>
+
+        <div class="perk_content">
+            <div class="perk_icon_container">
+                <img alt="" class="perk_icon" src="images/success.png">
+            </div>
+
+            <div class="perk_description_container">
+                <span class="perk_description">Couleur rose pour les bulles de message</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="perk_container locked_perk" data-level="5">
+
+        <div class="perk_level_container locked_container">
+            <span class="perk_level">Niveau 5</span>
+        </div>
+
+        <div class="perk_content">
+            <div class="perk_icon_container">
+                <img alt="" class="perk_icon" src="images/success.png">
+            </div>
+
+            <div class="perk_description_container">
+                <span class="perk_description">Couleur verte pour les bulles de message</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="perk_container locked_perk" data-level="8">
+
+        <div class="perk_level_container locked_container">
+            <span class="perk_level">Niveau 8</span>
+        </div>
+
+        <div class="perk_content">
+            <div class="perk_icon_container">
+                <img alt="" class="perk_icon" src="images/success.png">
+            </div>
+
+            <div class="perk_description_container">
+                <span class="perk_description">Couleur bleu foncé pour les bulles de message</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="perk_container locked_perk" data-level="11">
+
+        <div class="perk_level_container locked_container">
+            <span class="perk_level">Niveau 11</span>
+        </div>
+
+        <div class="perk_content">
+            <div class="perk_icon_container">
+                <img alt="" class="perk_icon" src="images/success.png">
+            </div>
+
+            <div class="perk_description_container">
+                <span class="perk_description">Couleur orange pour les bulles de message</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="perk_container locked_perk" data-level="14">
+
+        <div class="perk_level_container locked_container">
+            <span class="perk_level">Niveau 14</span>
+        </div>
+
+        <div class="perk_content">
+            <div class="perk_icon_container">
+                <img alt="" class="perk_icon" src="images/success.png">
+            </div>
+
+            <div class="perk_description_container">
+                <span class="perk_description">Couleur rouge pour les bulles de message</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Paliers des effets sonores -->
+<div id="sound_perk_container">
+    <div class="category_title_container">
+        <span class="perk_category_title">Effets sonores</span>
+    </div>
+    <!-- Tracé qui relie les paliers -->
+    <div class="perk_trail"></div>
+
+    <!-- Paliers -->
+    <!-- Chaque palier est un container qui contient un niveau (sauvegardé en data), une icone et une description -->
+    <div class="perk_container locked_perk" data-level="3">
+
+        <div class="perk_level_container locked_container">
+            <span class="perk_level">Niveau 3</span>
+        </div>
+
+        <div class="perk_content">
+            <div class="perk_icon_container">
+                <img alt="" class="perk_icon" src="images/success.png">
+            </div>
+
+            <div class="perk_description_container">
+                <span class="perk_description">Passage de niveau: Carillon</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="perk_container locked_perk" data-level="6">
+
+        <div class="perk_level_container locked_container">
+            <span class="perk_level">Niveau 6</span>
+        </div>
+
+        <div class="perk_content">
+            <div class="perk_icon_container">
+                <img alt="" class="perk_icon" src="images/success.png">
+            </div>
+
+            <div class="perk_description_container">
+                <span class="perk_description">Passage de niveau: Orchestre</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="perk_container locked_perk" data-level="9">
+
+        <div class="perk_level_container locked_container">
+            <span class="perk_level">Niveau 9</span>
+        </div>
+
+        <div class="perk_content">
+            <div class="perk_icon_container">
+                <img alt="" class="perk_icon" src="images/success.png">
+            </div>
+
+            <div class="perk_description_container">
+                <span class="perk_description">Passage de niveau: Piano</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="perk_container locked_perk" data-level="12">
+
+        <div class="perk_level_container locked_container">
+            <span class="perk_level">Niveau 12</span>
+        </div>
+
+        <div class="perk_content">
+            <div class="perk_icon_container">
+                <img alt="" class="perk_icon" src="images/success.png">
+            </div>
+
+            <div class="perk_description_container">
+                <span class="perk_description">Passage de niveau: Clown</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="perk_container locked_perk" data-level="15">
+
+        <div class="perk_level_container locked_container">
+            <span class="perk_level">Niveau 15</span>
+        </div>
+
+        <div class="perk_content">
+            <div class="perk_icon_container">
+                <img alt="" class="perk_icon" src="images/success.png">
+            </div>
+
+            <div class="perk_description_container">
+                <span class="perk_description">Passage de niveau: Secret</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

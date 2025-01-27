@@ -1,0 +1,344 @@
+* {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    transition: all .1s ease;
+    color: #ffffff;
+    scrollbar-color: #8A2FFF #3A3A3A;
+    scrollbar-width: thin;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(31.36deg, #121228 22.08%, #1E192F 55.7%, #2F1F4B 79.65%);
+}
+
+#preferences_container, #account_container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 28%;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 40px;
+    height: 575px;
+    border: 3px solid #8A2FFF;
+    background: linear-gradient(0deg, #0D0D14, #0D0D14), #D9D9D9;
+    box-shadow: 5px 2px 19px #603ff9;
+    border-radius: 16px;
+}
+
+.account_container_colored_title {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+    -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+    0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+    font-family: Jost-Bold, sans-serif;
+    font-size: 32px;
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+.account_container_secondary_title, .preferences_container_secondary_title {
+    margin-top: 12px;
+    margin-bottom: 6px;
+    padding-left: 12px;
+    font-family: Jost-Light, sans-serif;
+    font-size: 20px;
+}
+
+.account_informations, .preferences_visual_settings, .preferences_sound_settings {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 8px;
+}
+
+#account_information_entries {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+    align-items: start;
+}
+
+.account_information_entry {
+    display: flex;
+    font-family: Jost-Medium, sans-serif;
+    font-size: 18px;
+    color: #7c21ff;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 3px;
+}
+
+.account_information_entry b {
+    color: deepskyblue;
+    animation: ease-in write 0.5s;
+    font-family: Jost-Medium, sans-serif; /* Style de police de machine à écrire */
+    white-space: nowrap; /* Empêche le retour à la ligne */
+    overflow: hidden; /* Cache le texte qui dépasse */
+}
+
+@keyframes write {
+    0% {
+        border-right: 2px solid #2854EF; /* Curseur de la machine à écrire */
+    }
+    99% {
+        border-right: 2px solid #2854EF; /* Curseur de la machine à écrire */
+    }
+    100% {
+        border-right: none;
+    }
+}
+
+.account_security {
+    width: 82%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 25px;
+}
+
+#account_buttons_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+/*password change fixed container*/
+#password_change_button, #password_change_confirm_button, #save_preferences_button {
+    width: fit-content;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 8px 21px;
+    border-radius: 3px;
+    border: none;
+    background: linear-gradient(159.93deg, #2854EF -34.54%, #8A2FFF 124.47%), #262626;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 4px #00000040;
+}
+
+#delete_account_button, #delete_account_confirm_button {
+    width: fit-content;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 8px 21px;
+    border-radius: 3px;
+    border: none;
+    background: #FD5454;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 4px #00000040;
+}
+
+button p {
+    font-family: Montserrat-Medium, sans-serif;
+    font-size: 18px;
+}
+
+#password_change_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    position: fixed;
+    width: 400px;
+    height: 240px;
+    border: 3px solid #8A2FFF;
+    background: linear-gradient(0deg, #0D0D14, #0D0D14), #D9D9D9;
+    box-shadow: 5px 2px 19px #603ff9;
+    border-radius: 16px;
+}
+
+.account_form_entries {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-top: 8px;
+    width: 82%;
+}
+
+.account_form_input {
+    background-color: #3A3A3A;
+    border-image-source: linear-gradient(159.93deg, #2854EF -34.54%, #8A2FFF 124.47%);
+    border-image-slice: 1;
+    border-radius: 8px;
+    padding: 6px 6px 6px 12px;
+    z-index: 1;
+    font-family: Jost-Medium, sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    caret-color: #8A2FFF;
+    outline: none;
+    appearance: none;
+    width: 100%;
+}
+
+.account_form_title {
+    margin-top: 12px;
+    padding-left: 12px;
+    font-family: Jost-Light, sans-serif;
+    font-size: 16px;
+}
+
+.border {
+    background: linear-gradient(159.93deg, #2854EF -34.54%, #8A2FFF 124.47%), #262626;
+    border-radius: 8px;
+    padding: 2px;
+    margin: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden_element {
+    display: none !important;
+}
+
+#delete_account_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    position: fixed;
+    width: 400px;
+    height: 160px;
+    border: 3px solid #8A2FFF;
+    background: linear-gradient(0deg, #0D0D14, #0D0D14), #D9D9D9;
+    box-shadow: 5px 2px 19px #603ff9;
+    border-radius: 16px;
+}
+
+#preferences_visual_settings_parameters, #preferences_sound_settings_parameters {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-top: 8px;
+    align-content: space-around;
+}
+
+.preferences_visual_settings_parameter_label {
+    padding-left: 12px;
+    font-family: Jost-Light, sans-serif;
+    font-size: 16px;
+}
+
+
+.preferences_dropdown_border {
+    border-radius: 8px;
+    padding: 2px;
+    margin: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(159.93deg, #2854EF -34.54%, #8A2FFF 124.47%), #262626;
+}
+
+.preferences_dropdown_wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.preferences_dropdown_wrapper .wrapped.input {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    height: 25px;
+    font-family: Jost-Medium, sans-serif;
+    font-size: 16px;
+    caret-color: #8A2FFF;
+}
+
+.preferences_dropdown_wrapper .wrapped {
+    border-radius: 8px;
+    padding: 5px 8px;
+    background-color: #3A3A3A;
+}
+
+.preferences_dropdown_wrapper .wrapped.input .selected_value {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 4px;
+}
+
+.preferences_dropdown_wrapper .wrapped.input .selected_value span {
+    opacity: .5;
+}
+
+.preferences_dropdown_wrapper .wrapped.input img {
+    width: 12px;
+}
+
+.open {
+    transform: rotate(180deg);
+}
+
+.options {
+    border: solid 2px #8A2FFF;
+    top: 46px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: 99;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 200px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.preferences_dropdown_wrapper .wrapped.options .option {
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    filter: brightness(.8);
+}
+
+.preferences_dropdown_wrapper .wrapped.options .option input[type="checkbox"] {
+    appearance: none;
+    border: 2px solid #C9CED6;
+    border-radius: 10px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preferences_dropdown_wrapper .wrapped.options .option label {
+    font-family: Jost-Medium, sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    caret-color: #8A2FFF;
+}
+
+.save_preferences_button_container {
+    display: flex;
+    margin-top: 8px;
+}
+

@@ -1,0 +1,299 @@
+* {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    transition: all .1s ease;
+    color: #ffffff;
+    scrollbar-color: #8A2FFF #3A3A3A;
+    scrollbar-width: thin;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(31.36deg, #121228 22.08%, #1E192F 55.7%, #2F1F4B 79.65%);
+}
+
+#imitating_entry_container {
+    display: flex;
+    position: fixed;
+    top: 62px;
+    bottom: 65px;
+    width: calc(100vw - 50px);
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+#progress_bar_container {
+    left: 0;
+    position: relative;
+    width: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#progress_bar {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: flex-end;
+    align-items: center;
+    width: 32px;
+    height: calc(100% - 16px);
+    border: 3px solid #8A2FFF;
+    background: transparent;
+    box-shadow: 5px 2px 19px #603ff9;
+    border-radius: 50px;
+}
+
+#progress_bar_anim {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff; /* Couleur de l'éclairage */
+    opacity: 0;
+    border-radius: 50px; /* Assorti à la barre de progression */
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1; /* Assurez-vous qu'il est au-dessus du remplissage */
+}
+
+
+#progress_bar_fill {
+    margin-left: 2px;
+    width: 101%;
+    height: 10%;
+    background: #ff2483;
+    border-radius: 50px;
+    transition: height 0.5s ease-in-out; /* Animation fluide de la hauteur */
+}
+
+
+#chat_input {
+    background-color: #3A3A3A;
+    border-image-source: linear-gradient(159.93deg, #2854EF -34.54%, #8A2FFF 124.47%);
+    border-image-slice: 1;
+    border-radius: 8px;
+    padding: 6px 6px 6px 12px;
+    z-index: 1;
+    font-family: Jost-Medium, sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    caret-color: #8A2FFF;
+    outline: none;
+    appearance: none;
+    width: 100%;
+}
+
+#message_form {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.border {
+    background: linear-gradient(159.93deg, #2854EF -34.54%, #8A2FFF 124.47%), #262626;
+    border-radius: 8px;
+    padding: 2px;
+    margin: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.send_button, #music_button {
+    z-index: 99;
+    flex-shrink: 0;
+    height: 38px;
+    width: 38px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: none;
+    background: linear-gradient(159.93deg, #2854EF -34.54%, #8A2FFF 124.47%), #262626;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 4px #00000040;
+    margin: 6px;
+    padding: 6px;
+}
+
+.send_button img, #music_button img {
+    z-index: 99;
+    width: 24px;
+    margin-bottom: 2px;
+}
+
+#chat {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    padding: 5% 50px 5% 50px;
+    margin-left: 28px;
+    margin-right: 28px;
+}
+
+.entry_container {
+    z-index: 1;
+    position: fixed;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100vw - 50px);
+    display: flex;
+}
+
+
+.message-row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.message-row.mine {
+    align-items: end;
+}
+
+/*.message-row.mine .bubble {
+    background-color: #07c;
+}
+
+.message-row.theirs .bubble {
+    background-color: #333;
+}*/
+
+.details {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.sender {
+    font-family: Inter-Medium, sans-serif;
+    font-weight: bold;
+    align-self: start;
+    margin-right: 5px;
+}
+
+.message-timestamp {
+    color: #888;
+    font-size: 12px;
+    margin-top: 3px;
+    margin-right: 5px;
+}
+
+.bubble {
+    margin-top: 5px;
+    border-radius: 20px;
+    padding: 5px 10px;
+    width: fit-content;
+    max-width: calc(100% - 70px);
+    font-family: Jost-Medium, sans-serif;
+    overflow: hidden;
+    display: inline-block;
+    word-wrap: break-word; /* Permet de casser les mots longs */
+}
+
+.bubble a {
+    color: #FAF3DD;
+    text-decoration: none;
+}
+
+.red {
+    color: darkred;
+    font-size: 12px;
+}
+
+#tutorial_container {
+    z-index: 99;
+    display: flex;
+    position: fixed;
+    top: 34vh;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 500px;
+    height: 210px;
+    border: 3px solid #8A2FFF;
+    background: linear-gradient(0deg, #0D0D14, #0D0D14), #D9D9D9;
+    box-shadow: 5px 2px 19px #603ff9;
+    border-radius: 16px;
+}
+
+#tutorial_container #tutorial_header_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+#tutorial_container h1 {
+    font-family: Jost-Regular, sans-serif;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+#tutorial_container img {
+    display: flex;
+    align-items: center;
+    margin-left: 18px;
+    width: 55px;
+    cursor: pointer;
+}
+
+#tutorial_container > p {
+    font-family: Jost-Light, sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    margin-top: 12px;
+    margin-left: 16px;
+    margin-right: 16px;
+    text-align: center;
+}
+
+
+#tutorial_button {
+    width: fit-content;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 8px 21px;
+    border-radius: 3px;
+    border: none;
+    background: linear-gradient(159.93deg, #2854EF -34.54%, #8A2FFF 124.47%), #262626;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 4px #00000040;
+}
+
+#tutorial_button p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat-Medium, sans-serif;
+    font-size: 18px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.mention {
+    color: #EAD2AC;
+}

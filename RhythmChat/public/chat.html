@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width"
+          name="viewport">
+    <title>Rhythm Chat</title>
+    <link href="images/icon.png" id="favicon" rel="icon" type="image/x-icon">
+
+    <!-- Importation des styles css-->
+    <link href="style/chat.css" rel="stylesheet">
+    <link href="style/navbar.css" rel="stylesheet">
+    <link href="style/notifications.css" rel="stylesheet">
+
+    <!-- Importation des scripts js-->
+    <script src="client/pageLoadHandler.js"></script>
+    <script src="client/utils.js"></script>
+    <script src="client/soundHandler.js"></script>
+    <script src="client/xpHandler.js"></script>
+    <script src="client/notificationsHandler.js"></script>
+    <script src="client/authorizationsHandler.js"></script>
+    <script src="client/settingsHandler.js"></script>
+    <script src="client/client.js"></script>
+</head>
+<body>
+<!-- Notifications -->
+<ul class="notifications"></ul>
+<ul class="xp_notifications"></ul>
+<!-- Barre de navigation -->
+<div class="header_container">
+    <div class="header_left_part">
+        <img alt="Chat" loading="lazy" src="images/icon.png">
+        <div class="nav">
+            <a class="current_page_link" href="chat.html">Chat</a>
+            <a class="other_page_link" href="perk.html">Palier</a>
+            <a class="other_page_link" href="rank.html">Classement</a>
+            <a class="other_page_link" href="account.html">Compte</a>
+
+        </div>
+    </div>
+    <div class="header_right_part">
+        <!-- Compteur de sessions actives-->
+        <div class="sessions_counter">
+            <img alt="Chat" src="images/online.png">
+            <p class="sessions_counter_text">0 Connectés</p>
+        </div>
+        <!-- Bouton de déconnexion -->
+        <button class="logout_button" type="button">
+            <p>Déconnexion</p>
+        </button>
+    </div>
+
+    <!-- Tutoriel -->
+</div>
+<div class="hidden" id="tutorial_container">
+    <div id="tutorial_header_container">
+        <h1>Bienvenue sur RhythmChat !</h1>
+        <img alt="Chat" loading="lazy" src="images/icon.png">
+    </div>
+    <p>Ici, vous pourrez échanger des messages avec vos amis, plus vous écrirez en rythme, plus vous aurez
+        d'expérience permettant de débloquer plus de fonctionnalités.</p>
+    <!-- Bouton de validation du tutoriel -->
+    <button id="tutorial_button" type="button">
+        <p class="tutorial_button_text">Commencer</p>
+    </button>
+</div>
+
+<!-- Barre de progression de l'xp-->
+<div id="imitating_entry_container">
+    <div id="progress_bar_container">
+
+        <div id="progress_bar">
+            <!-- Barre de progression -->
+            <div id="progress_bar_fill"></div>
+            <!-- Animation de la barre -->
+            <div id="progress_bar_anim"></div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Chat -->
+<div id="chat">
+    <div id="messages">
+        <!-- les messages seront ajoutés ici -->
+    </div>
+    <div class="entry_container">
+        <button id="music_button" type="button">
+            <img alt="" id="variable_image" src="images/notification.png">
+        </button>
+
+        <!-- Formulaire d'envoi de message -->
+        <form id="message_form">
+            <div class="border">
+                <input id="chat_input" placeholder="Votre message..." type="text">
+            </div>
+            <!-- Bouton d'envoi -->
+            <button class="send_button" type="submit">
+                <img alt="" src="images/send.png">
+            </button>
+        </form>
+    </div>
+</div>
+
+</body>

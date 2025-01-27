@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width"
+          name="viewport">
+    <title>Rhythm Chat</title>
+    <link href="images/icon.png" id="favicon" rel="icon" type="image/x-icon">
+
+    <!-- Importation des styles css-->
+    <link href="style/account.css" rel="stylesheet">
+    <link href="style/navbar.css" rel="stylesheet">
+    <link href="style/notifications.css" rel="stylesheet">
+
+    <!-- Importation des scripts js-->
+    <script src="client/pageLoadHandler.js"></script>
+    <script src="client/utils.js"></script>
+    <script src="client/soundHandler.js"></script>
+    <script src="client/notificationsHandler.js"></script>
+    <script src="client/xpHandler.js"></script>
+    <script src="client/authorizationsHandler.js"></script>
+    <script src="client/settingsHandler.js"></script>
+    <script src="client/client.js"></script>
+</head>
+<body>
+<!-- Notifications -->
+<ul class="notifications"></ul>
+<!-- Barre de navigation -->
+<div class="header_container">
+    <div class="header_left_part">
+        <img alt="" loading="lazy" src="images/icon.png">
+        <div class="nav">
+            <a class="other_page_link" href="chat.html">Chat</a>
+            <a class="other_page_link" href="perk.html">Palier</a>
+            <a class="other_page_link" href="rank.html">Classement</a>
+            <a class="current_page_link" href="account.html">Compte</a>
+
+        </div>
+    </div>
+    <div class="header_right_part">
+        <!-- Compteur de sessions actives-->
+        <div class="sessions_counter">
+            <img alt="Chat" src="images/online.png">
+            <p class="sessions_counter_text">0 Connectés</p>
+        </div>
+        <!-- Bouton de déconnexion -->
+        <button class="logout_button" type="button">
+            <p>Déconnexion</p>
+        </button>
+    </div>
+</div>
+
+
+<!-- Preferences
+    - Paramettres visuels
+        - Mes couleurs de bulles
+        - Les couleurs des autres bulles
+    - Paramettres sonores
+        - Son de passage de niveau
+        - Musique de fond
+    - Bouton de sauvegarde
+-->
+<div id="preferences_container">
+    <h1 class="account_container_colored_title">Préférences</h1>
+
+    <!-- Paramettres visuels -->
+    <div class="preferences_visual_settings">
+        <h2 class="preferences_container_secondary_title">Changer la couleur des bulles</h2>
+
+        <div id="preferences_visual_settings_parameters">
+
+            <label class="preferences_visual_settings_parameter_label">Mes bulles :</label>
+
+            <div class="preferences_dropdown_border">
+                <div class="preferences_dropdown_wrapper">
+                    <!-- Menu déroulant de selection de la couleur de ses propre bulles -->
+                    <div class="wrapped input">
+                        <div class="selected_value" id="dropdown_color_mine">
+                            <span id="dropdown_color_mine_selected_value"></span>
+                            <img alt="" id="dropdown_color_mine_icon" src="images/small_arrow.svg">
+                        </div>
+                        <div class="wrapped options hidden" id="dropdown_color_mine_options">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <label class="preferences_visual_settings_parameter_label">Les autres bulles :</label>
+
+            <div class="preferences_dropdown_border">
+                <div class="preferences_dropdown_wrapper">
+                    <!-- Menu déroulant de selection de la couleur des bulles des autres -->
+                    <div class="wrapped input">
+                        <div class="selected_value" id="dropdown_color_other">
+                            <span id="dropdown_color_other_selected_value"></span>
+                            <img alt="" id="dropdown_color_other_icon" src="images/small_arrow.svg">
+                        </div>
+                        <div class="wrapped options hidden" id="dropdown_color_other_options">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Paramettres sonores -->
+    <div class="preferences_sound_settings">
+        <h2 class="preferences_container_secondary_title">Changer les sons</h2>
+
+        <div id="preferences_sound_settings_parameters">
+
+            <label class="preferences_visual_settings_parameter_label">Son de passage de niveau :</label>
+
+            <div class="preferences_dropdown_border">
+                <div class="preferences_dropdown_wrapper">
+                    <!-- Menu déroulant de selection du son joué au passage de niveau -->
+                    <div class="wrapped input">
+                        <div class="selected_value" id="dropdown_sound_effects">
+                            <span id="dropdown_sound_effects_selected_value"></span>
+                            <img alt="" id="dropdown_sound_effects_icon" src="images/small_arrow.svg">
+                        </div>
+                        <div class="wrapped options hidden" id="dropdown_sound_effects_options">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <label class="preferences_visual_settings_parameter_label">La musique de fond :</label>
+
+            <div class="preferences_dropdown_border">
+                <div class="preferences_dropdown_wrapper">
+                    <!-- Menu déroulant de selection de la musique de fond du site -->
+                    <div class="wrapped input">
+                        <div class="selected_value" id="dropdown_sound_music">
+                            <span id="dropdown_sound_music_selected_value"></span>
+                            <img alt="" id="dropdown_sound_music_icon" src="images/small_arrow.svg">
+                        </div>
+                        <div class="wrapped options hidden" id="dropdown_sound_music_options">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bouton de sauvegarde -->
+    <div class="save_preferences_button_container">
+        <button id="save_preferences_button" type="button">
+            <p>Sauvegarder</p>
+        </button>
+    </div>
+
+</div>
+
+<!-- Account
+* Informations
+    - Nom d'utilisateur
+    - Niveau
+    - Expérience
+    - Classement
+    - Messages envoyés
+    - Date de création
+* Sécurité
+    - Changer le mot de passe
+    - Supprimer le compte
+-->
+<div id="account_container">
+    <h1 class="account_container_colored_title">Compte</h1>
+
+    <!-- Informations -->
+    <div class="account_informations">
+        <h2 class="account_container_secondary_title">Informations</h2>
+
+        <div id="account_information_entries">
+            <!-- Les informations de l'utilisateur seront ajoutées dans ces span -->
+            <span class="account_information_entry" id="account_username">Nom d'utilisateur > </span>
+            <span class="account_information_entry" id="account_level">Niveau > </span>
+            <span class="account_information_entry" id="account_xp">Expérience > </span>
+            <span class="account_information_entry" id="account_rank">Classement > </span>
+            <span class="account_information_entry" id="account_message_count">Messages envoyés > </span>
+            <span class="account_information_entry" id="account_creation_date">Date de création > </span>
+        </div>
+    </div>
+
+    <!-- Sécurité -->
+    <div class="account_security">
+        <h2 class="account_container_secondary_title">Sécurité</h2>
+        <div id="account_buttons_container">
+
+            <!-- Changer le mot de passe -->
+            <button id="password_change_button" type="button">
+                <p>Changer le mot de passe</p>
+            </button>
+
+            <!-- Supprimer le compte -->
+            <button id="delete_account_button" type="button">
+                <p>Supprimer le compte</p>
+            </button>
+
+        </div>
+    </div>
+</div>
+
+<!-- Formulaire de changement de mot de passe -->
+<form class="hidden_element" id="password_change_container">
+    <div class="account_form_entries">
+        <h2 class="account_form_title">Mot de passe actuel</h2>
+        <div class="border">
+            <!-- Entrée du mot de passe actuel -->
+            <input class="account_form_input" id="current_password" placeholder="12345678" type="password">
+        </div>
+        <h2 class="account_form_title">Nouveau mot de passe</h2>
+        <div class="border">
+            <!-- Entrée du nouveau mot de passe -->
+            <input class="account_form_input" id="new_password" placeholder="azertyuiop" type="password">
+        </div>
+    </div>
+
+    <!-- Bouton de confirmation -->
+    <button id="password_change_confirm_button" type="submit">
+        <p>Confirmer</p>
+    </button>
+</form>
+
+<!-- Formulaire de suppression de compte -->
+<form class="hidden_element" id="delete_account_container">
+    <div class="account_form_entries">
+        <h2 class="account_form_title">Mot de passe</h2>
+        <div class="border">
+            <!-- Entrée du mot de passe -->
+            <input class="account_form_input" id="delete_account_password" placeholder="12345678" type="password">
+        </div>
+    </div>
+
+    <!-- Bouton de confirmation -->
+    <button id="delete_account_confirm_button" type="submit">
+        <p>Confirmer</p>
+    </button>
+</form>
+</body>
+</html>
