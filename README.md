@@ -1,6 +1,6 @@
 # 🎶 **RhythmChat** 🎤
 
-![RhythmChat Banner]([https://your-image-link.com/banner.png](https://github.com/AilfeLirik/RhythmChat/blob/main/RhythmChat/public/images/icon.png))
+![RhythmChat Banner](https://github.com/AilfeLirik/RhythmChat/blob/main/RhythmChat/public/images/icon.png))
 
 Bienvenue sur **RhythmChat**, une plateforme de communication innovante qui fusionne l'échange traditionnel avec des éléments de rythme et de jeu vidéo pour une expérience unique et captivante ! 🚀
 
