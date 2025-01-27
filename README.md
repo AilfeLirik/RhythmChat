@@ -6,7 +6,7 @@ Bienvenue sur **RhythmChat**, une plateforme de communication innovante qui fusi
 
 ## 🌟 **À propos du projet**
 
-**RhythmChat** est conçu pour offrir une expérience de chat dynamique où la rapidité et le rythme de vos messages influencent votre progression et le déblocage de nouvelles fonctionnalités. En combinant communication et gamification, RhythmChat rend chaque interaction plus engageante et amusante. 🎮💬
+**RhythmChat** est conçu pour offrir une expérience de chat dynamique où la rapidité et le rythme de vos messages influencent votre progression et le déblocage de nouvelles fonctionnalités. En combinant communication et gamification, RhythmChat rend chaque interaction plus engageante et amusante. 🎮💬 C'est un projet que j'ai pu réaliser dans le cadre de ma Spécialité NSI en année de première.
 
 ## 🛠️ **Fonctionnalités principales**
 
@@ -61,3 +61,33 @@ Suivez ces étapes pour installer et exécuter **RhythmChat** localement sur vot
 1. **Cloner le dépôt**
    ```bash
    git clone https://github.com/VotreNomUtilisateur/RhythmChat.git
+   ```
+
+2. **Naviguer dans le répertoire du projet**
+   ```bash
+   cd RhythmChat
+   ```
+
+3. **Installer les dépendances**
+   ```bash
+   npm install
+   ```
+
+4. **Configurer les variables d'environnement**
+   - Créez un fichier `.env` à la racine du projet.
+   - Ajoutez les configurations nécessaires (exemple) :
+     ```env
+     PORT=3000
+     DATABASE_URL=your_database_url
+     JWT_SECRET=your_jwt_secret
+     ```
+
+5. **Lancer le serveur**
+   ```bash
+   npm start
+   ```
+   Le serveur devrait maintenant être en cours d'exécution sur [http://localhost:3000](http://localhost:3000).
+
+6. **Accéder à l'application**
+   - Ouvrez votre navigateur préféré.
+   - Rendez-vous à [http://localhost:3000](http://localhost:3000) pour voir **RhythmChat** en action !
