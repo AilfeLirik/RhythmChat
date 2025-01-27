@@ -1,6 +1,6 @@
 # 🎶 **RhythmChat** 🎤
 
-![RhythmChat Banner](https://your-image-link.com/banner.png)
+![RhythmChat Banner]([https://your-image-link.com/banner.png](https://github.com/AilfeLirik/RhythmChat/blob/main/RhythmChat/public/images/icon.png))
 
 Bienvenue sur **RhythmChat**, une plateforme de communication innovante qui fusionne l'échange traditionnel avec des éléments de rythme et de jeu vidéo pour une expérience unique et captivante ! 🚀
 
@@ -34,6 +34,9 @@ Bienvenue sur **RhythmChat**, une plateforme de communication innovante qui fusi
 - **Préférences Utilisateur** 🛠️ : Personnalisez les fonctionnalités selon vos préférences.
 - **Sauvegarde des Données** 💾 : Historique des messages et données utilisateur sauvegardées côté serveur.
 - **Authentification Sécurisée** 🔐 : Reconnaissance des utilisateurs via des tokens.
+
+![RhythmChat Login Page](https://github.com/user-attachments/assets/b3ec2caf-6bd7-4d93-b540-69aa3acfb404)
+
 
 ## 🖥️ **Technologies Utilisées**
 
@@ -74,13 +77,7 @@ Suivez ces étapes pour installer et exécuter **RhythmChat** localement sur vot
    ```
 
 4. **Configurer les variables d'environnement**
-   - Créez un fichier `.env` à la racine du projet.
-   - Ajoutez les configurations nécessaires (exemple) :
-     ```env
-     PORT=3000
-     DATABASE_URL=your_database_url
-     JWT_SECRET=your_jwt_secret
-     ```
+   Assurez vous de bien changer les chemins de connexion dans le fichier client.js, de même il faut parcourir le server.js et s'assurer de la bonne distribution des ressources
 
 5. **Lancer le serveur**
    ```bash
